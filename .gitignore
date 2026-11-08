@@ -1,0 +1,20 @@
+## build/output
+bin/
+obj/
+out/
+
+## VS soubory a UserConfig
+.vs/
+*.user
+*.userosscache
+*.suo
+*.userprefs
+
+## pkg cache
+packages/
+*.nuget.props
+*.nuget.targets
+
+## soubory vytvorene OS
+.DS_Store
+Thumbs.db

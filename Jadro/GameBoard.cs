@@ -39,16 +39,53 @@ namespace HraTetris.Jadro
             return JeNaDesce(radek, sloupec) && grid[radek, sloupec] == 0;
         }
 
+        // vleze se?
+        public bool Fits(Tetromino blok)
+        {
+            foreach (Pozice p in blok.AktualniPozice())
+            {
+                // pokud cast bloku narazi do jineho bloku ci mimo playfield
+                if (!JePrazdne(p.Radek, p.Sloupec))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        // polozit blok na desku
+        public void PolozBlok(Tetromino blok)
+        {
+            foreach (Pozice p in blok.AktualniPozice())
+            {
+                if (JeNaDesce(p.Radek, p.Sloupec))
+                {
+                    grid[p.Radek, p.Sloupec] = blok.id;
+                }
+            }
+        }
+
+        // nuke everything into oblivion 
+        public void Reset()
+        {
+            for (int r = 0; r < Radky; r++)
+            {
+                for (int c = 0; c < Sloupce; c++)
+                {
+                    grid[r, c] = 0;
+                }
+            }
+        }
         /*
         TODO
         kontrovat souradnice [x]
         prazdnota pole [x]
-        pokud ma tetromino misto []
-        zapisovani samotnych tetromin []
+        pokud ma tetromino misto [x]
+        zapisovani samotnych tetromin [x]
         kontrola radku []
         vymazani plneho radku []
         posunuti vseho -1 []
-        reset cele hry []
+        reset cele hry [x]
          */
 
     }

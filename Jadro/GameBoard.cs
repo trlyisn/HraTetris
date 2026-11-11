@@ -27,10 +27,22 @@ namespace HraTetris.Jadro
             grid = new int[Radky, Sloupce];
         }
 
+        // jsou dane souradnice na gameboarde ci mimo
+        public bool JeNaDesce(int radek, int sloupec)
+        {
+            return radek >= 0 && radek < Radky && sloupec >= 0 && sloupec < Sloupce;
+        }
+
+        // je dane pole prazdne?
+        public bool JePrazdne(int radek, int sloupec)
+        {
+            return JeNaDesce(radek, sloupec) && grid[radek, sloupec] == 0;
+        }
+
         /*
         TODO
-        kontrovat souradnice []
-        prazdnota pole []
+        kontrovat souradnice [x]
+        prazdnota pole [x]
         pokud ma tetromino misto []
         zapisovani samotnych tetromin []
         kontrola radku []

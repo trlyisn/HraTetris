@@ -116,6 +116,23 @@ namespace HraTetris.Jadro
             }
         }
 
+        // zkompletovani fuknce na mazani plnych radku
+        public int VymazatRadky()
+        {
+            int pocet = 0;
+            for (int r = Radky - 1; r >= 0; r--)
+            {
+                if (JeRadekPlny(r))
+                {
+                    VymazatRadek(r);
+                    PosunoutRadek(r);
+                    pocet++;
+                    r++;
+                }
+            }
+
+            return pocet;
+        }
 
         /*
         TODO
@@ -125,7 +142,7 @@ namespace HraTetris.Jadro
         zapisovani samotnych tetromin [x]
         kontrola radku [x]
         vymazani plneho radku [x]
-        posunuti vseho -1 []
+        posunuti vseho -1 [x]
         reset cele hry [x]
          */
 

@@ -76,14 +76,55 @@ namespace HraTetris.Jadro
                 }
             }
         }
+
+        // kontroluje zda li je radek plny
+        private bool JeRadekPlny(int radek)
+        {
+            for (int sloupec = 0; sloupec < Sloupce; sloupec++)
+            {
+                if (grid[radek, sloupec] == 0)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        // vymazani radku
+        private void VymazatRadek(int radek)
+        {
+            for (int sloupec = 0; sloupec < Sloupce; sloupec++)
+            {
+                grid[radek, sloupec] = 0;
+            }
+        }
+
+        // vse nad prazdnym radkem -1 dolu
+        private void PosunoutRadek(int prazdnyRadek)
+        {
+            for (int r = prazdnyRadek; r > 0; r--)
+            {
+                for (int c = 0; c < Sloupce; c++)
+                {
+                    grid[r, c] = grid[r - 1, c];
+                }
+            }
+
+            for (int c = 0; c < Sloupce; c++)
+            {
+                grid[0, c] = 0;
+            }
+        }
+
+
         /*
         TODO
         kontrovat souradnice [x]
         prazdnota pole [x]
         pokud ma tetromino misto [x]
         zapisovani samotnych tetromin [x]
-        kontrola radku []
-        vymazani plneho radku []
+        kontrola radku [x]
+        vymazani plneho radku [x]
         posunuti vseho -1 []
         reset cele hry [x]
          */

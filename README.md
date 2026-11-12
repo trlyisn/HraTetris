@@ -30,6 +30,19 @@ Herní logika je soustředěna ve složce `Jadro/` a funguje nezávisle na grafi
 
 ---
 
+## Požadavky a návod ke spuštění
+* **Vývojové prostředí:** Microsoft Visual Studio 2022/2019 se sadou nástrojů pro vývoj desktopových aplikací v C# (.NET Framework).
+* **Framework:** .NET Framework 4.8.
+* **Spuštění:**
+   * Naklonujte repozitář (nebo stáhněte .zip):
+     ```bash
+     git clone https://github.com/trlyisn/HraTetris.git
+     ```
+   * Otevřete soubor řešení `HraTetris.slnx` ve Visual Studiu.
+   * Zkompilujte a spusťte projekt klávesou `F5` (nebo `Ctrl + F5`).
+
+---
+
 ## Milníky
 
 - [x] **KB1:** Objektový návrh, logika bloků, rotace a mřížka

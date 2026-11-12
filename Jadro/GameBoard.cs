@@ -134,6 +134,22 @@ namespace HraTetris.Jadro
             return pocet;
         }
 
+        // jen na rychly output pro overeni
+        public void PrintDebug()
+        {
+            System.Text.StringBuilder sb = new System.Text.StringBuilder();
+            for (int r = 0; r < Radky; r++)
+            {
+                sb.Append("|");
+                for (int c = 0; c < Sloupce; c++)
+                {
+                    sb.Append(grid[r, c] == 0 ? "." : "#");
+                }
+                sb.AppendLine("|");
+            }
+            System.Diagnostics.Debug.WriteLine(sb.ToString());
+        }
+
         /*
         TODO
         kontrovat souradnice [x]
@@ -144,7 +160,6 @@ namespace HraTetris.Jadro
         vymazani plneho radku [x]
         posunuti vseho -1 [x]
         reset cele hry [x]
-         */
-
+        */
     }
 }

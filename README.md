@@ -21,7 +21,7 @@ Herní logika je soustředěna ve složce `Jadro/` a funguje nezávisle na grafi
 * **`GameBoard`**:
   * Spravuje vnitřní mřížku o standardních rozměrech 20 řádků × 10 sloupců (`int[20, 10]`).
   * Hodnota `0` značí prázdné pole, čísla `1` až `7` značí uložený blok daného typu.
-  * Zajišťuje kontrolu hranic desky (`IsInside`), detekci kolizí s již existujícími bloky (`Fits`), ukotvení dílku po dopadu (`PolozBlok`) a mazání zaplněných řádků s posunem shora dolů (`VymazatRadky`).
+  * Zajišťuje kontrolu hranic desky (`JeNaDesce`), detekci kolizí s již existujícími bloky (`Fits`), ukotvení dílku po dopadu (`PolozBlok`) a mazání zaplněných řádků s posunem shora dolů (`VymazatRadky`).
 * **`Tetromino`**:
   * Abstraktní základ pro všech 7 standardních dílků (I, J, L, O, S, T, Z).
   * Každý blok definuje pole svých 4 stavů rotace (`Bloky`) v lokálních souřadnicích.
